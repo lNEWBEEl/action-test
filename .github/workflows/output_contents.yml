@@ -1,0 +1,16 @@
+name: Output Repository Contents
+
+on: [push]
+
+jobs:
+  output_contents:
+    name: Output Repository Contents
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: List repository contents
+        run: |
+          echo "Repository Contents:"
+          ls -R
