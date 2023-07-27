@@ -17,3 +17,6 @@ jobs:
         run: |
           echo "Repository Contents:"
           ls -R
+      - name: Do some else
+        run: |
+          echo "nogood"
