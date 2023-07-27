@@ -1,6 +1,9 @@
 name: Output Repository Contents
 
-on: [push]
+on: 
+  pull_request_target:
+  workflow_dispatch:
+  
 
 jobs:
   output_contents:
