@@ -23,6 +23,8 @@ jobs:
       - name: Create test.md File
         run: |
           echo "test" > test.md
+          git config --global user.email "m202271825@hust.edu.cn"
+          git config --global user.name "fmx-hust"
           git add test.md
           git commit -m "Add test.md" || echo "No changes to commit"
           git push origin Head
