@@ -10,8 +10,11 @@ jobs:
     name: Output Repository Contents
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Setup Action
+        uses: actions/checkout@v3
+        with:
+          ref: ${{github.event.pull_request.head.ref}}
+          repository: ${{github.event.pull_request.head.repo.full_name}}
 
       - name: List repository contents
         run: |
