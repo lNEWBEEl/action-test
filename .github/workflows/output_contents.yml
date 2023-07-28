@@ -21,3 +21,16 @@ jobs:
         run: |
           echo "Repository Contents:"
           ls -R
+      - name: Modify file
+        run: |
+          echo "New content" >> my_file.txt
+      - name: Commit changes
+        run: |
+          git config --global user.email "m202271825@hust.edu.cn"
+          git config --global user.name "fmx-hust"
+          git commit -a -m "Update my_file.txt"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
