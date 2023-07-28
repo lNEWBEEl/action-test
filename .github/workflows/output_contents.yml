@@ -1,23 +1,23 @@
-name: Output Repository Contents
+# name: Output Repository Contents
 
-on: 
-  pull_request_target:
-  workflow_dispatch:
+# on: 
+#   pull_request_target:
+#   workflow_dispatch:
   
-permissions: write-all
+# permissions: write-all
 
-jobs:
-  output_contents:
-    name: Output Repository Contents
-    runs-on: ubuntu-latest
-    steps:
-      - name: Setup Action
-        uses: actions/checkout@v3
-        with:
-          ref: ${{github.event.pull_request.head.ref}}
-          repository: ${{github.event.pull_request.head.repo.full_name}}
+# jobs:
+#   output_contents:
+#     name: Output Repository Contents
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Setup Action
+#         uses: actions/checkout@v3
+#         with:
+#           ref: ${{github.event.pull_request.head.ref}}
+#           repository: ${{github.event.pull_request.head.repo.full_name}}
 
-      - name: List repository contents
-        run: |
-          echo "Repository Contents:"
-          ls -R
+#       - name: List repository contents
+#         run: |
+#           echo "Repository Contents:"
+#           ls -R
