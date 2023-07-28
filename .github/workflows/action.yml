@@ -9,12 +9,4 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Add file to repository
-        run: |
-          echo "This is a new file." > new_file.txt
-          git add new_file.txt
-          git config --global user.email "m202271825@hust.edu.cn"
-          git config --global user.name "fmx-hust"
-          git commit -m "Add new file"
-          git push
-          
+
