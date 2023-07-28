@@ -19,4 +19,8 @@ jobs:
           git config --global user.email "m202271825@hust.edu.cn"
           git config --global user.name "fmx-hust"
           git commit -m "Add new file"
-          git push origin HEAD:main
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
