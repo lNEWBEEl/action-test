@@ -3,7 +3,8 @@ name: My Action
 on:
   pull_request:
 
-permissions: write-all
+permissions:
+  contents: write-all
 
 jobs:
   build:
@@ -11,3 +12,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Create new file
+        run: |
+          echo "New content" > new_file.txt
+      # 将新文件添加到目标存储库
+      - name: Add new file to repository
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          directory: ./
+          message: "Add new_file.txt"
