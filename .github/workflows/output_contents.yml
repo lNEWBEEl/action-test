@@ -21,3 +21,25 @@ jobs:
         run: |
           echo "Repository Contents:"
           ls -R
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Action
+        uses: actions/checkout@v3
+        with:
+          ref: ${{github.event.pull_request.head.ref}}
+          repository: ${{github.event.pull_request.head.repo.full_name}}
+      - name: Modify file
+        run: |
+          echo "New content" >> my_file.txt
+      - name: Commit changes
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Action"
+          git commit -a -m "Update my_file.txt"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
