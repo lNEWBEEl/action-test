@@ -4,6 +4,7 @@ on:
   pull_request_target:
   workflow_dispatch:
   
+permissions: write-all
 
 jobs:
   output_contents:
