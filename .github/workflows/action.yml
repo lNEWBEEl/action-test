@@ -1,4 +1,4 @@
-# .github/workflows/auto-merge-dependabot-pr.yml
+
 on: pull_request_target
 permissions:
   contents: write
