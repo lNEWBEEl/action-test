@@ -1,18 +1,18 @@
-# name: Check Pull Request Title
+name: Check Pull Request Title
 
-# on:
-#   pull_request:
-#     branches:
-#       - main
-#   workflow_dispatch:
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
 
-# jobs:
-#   check:
-#     runs-on: ubuntu-latest
-#     steps:
-#     - name: Check Pull Request Title
-#       run: |
-#         title="${{ github.event.pull_request.title }}"
-#         if [[ ! $title =~ ^.*:\ .*$ ]]; then
-#           echo "Bad issue title"
-#         fi
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check Pull Request Title
+      run: |
+        title="${{ github.event.pull_request.title }}"
+        if [[ ! $title =~ ^.*:\ .*$ ]]; then
+          echo "Bad issue title"
+        fi
