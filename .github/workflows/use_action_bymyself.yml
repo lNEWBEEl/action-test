@@ -13,4 +13,4 @@ jobs:
     steps:
       - name: '输出当前时间'
         id: output-time
-        uses: lNEWBEEl/echotime@v1
+        uses: lNEWBEEl/echotime@v1.0.0
