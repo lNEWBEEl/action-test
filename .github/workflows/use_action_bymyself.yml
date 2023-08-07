@@ -13,9 +13,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: npm install
-        run: npm install @actions/core
 
       - name: '输出当前时间'
         id: output-time
-        uses: lNEWBEEl/echotime@v1.0.0
+        uses: lNEWBEEl/echotime@v1
