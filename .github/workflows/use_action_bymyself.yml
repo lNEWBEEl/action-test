@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 12
+          node-version: 16
       - name: '输出当前时间'
         id: output-time
         uses: lNEWBEEl/echotime@v1.0.0
