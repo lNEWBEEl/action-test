@@ -1,4 +1,4 @@
-name: '输出当前时间'
+name: '使用自创建action'
 
 on:
   push:
